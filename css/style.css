@@ -1,0 +1,218 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family:  'Sora', serif; 
+    background-color: #333333;
+	color: #ffcb0b;
+}
+p{
+	font-size: 0.7em;
+}
+header, .nav_links{
+    display: flex; 
+}
+a:link{
+	color: #ffcb0b;
+	outline: 1px dotted #003e78;
+	font-size: 1em;
+}
+a:visited{
+	color:#be9500; 
+	outline: 1px dotted #003e78;
+}
+#current{
+	outline-color: #ffcb0b;
+	background-color: #ffcb0b;
+	color: #003e78;
+	font-weight: bold;
+	font-size: 1.25em;
+}
+header{
+	background-color: #003e78;
+	align-items: center;
+}
+header, .nav_links{
+    flex-direction: column;
+}
+body{
+	margin:1%;
+	padding:1%;
+	font-size:150%;
+	align-items: center;
+}
+header,footer{
+	width: 100%;
+	height: 20%;
+}
+body{
+	margin: 0 0 0 0;
+	padding:0;
+}
+footer{
+	background-color: #00274c;
+	padding:0;
+}
+
+/*Make the h1 heading bigger with a bold font*/
+h1{
+	font-size: 1.25em; 
+	font-weight: bold;
+}
+
+/*Style the images*/
+/* img{
+	height :15%;
+    padding: 25px;
+    margin: 10px;
+} */
+
+/*Make the h2 heading match h1*/
+h2{
+	font-size: 2em; 
+	font-weight: bold;
+}
+
+/*Improve the spacing for paragraphs AND headings*/
+p, h1, h2 {
+    padding: 10px;
+}
+
+/*Add borders around the main components and some
+space too*/
+nav, main, h1, footer{
+	margin: 10px 0;
+}
+
+
+/*Change the styling for all of the list 
+items in the nav section*/
+nav li{
+	padding:10px;
+	width:50%;
+	display: inline-block;
+}
+
+
+.skip a{
+	background: #003e78;
+	left: 0;
+	padding: 6px;
+	-webkit-transition: top 1s ease-out;
+	transition: top 1s ease-out;
+	z-index: 1;
+  
+	position:absolute;
+	top: -50px;
+  }
+  
+  .skip a:focus{
+	top: 0px;
+  }
+
+.form-inline button {
+	font-family:  'Sora', serif; 
+	padding: 10px 20px;
+	background-color: #003e78;
+	border: 1px solid #ddd;
+	color: white;
+  }
+  
+  .form-inline button:hover {
+	background-color: #be9500;
+  }
+
+  .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto auto auto auto;
+	grid-row-gap: 15px;
+  
+  }
+  .container>*{
+	  max-height: 500px;
+	  max-width: 500px;
+	  margin: auto;
+  }
+  .umsi,.my_pic,.sjtu,.sjtu_pic,.sjtu_pic,.jcd,.jcd_pic{
+	grid-column: 1/span 1; 
+  }
+  .umsi{
+	grid-row: 1/span 1;   
+  }
+.my_pic{
+  	grid-row: 2/span 1; 
+}
+.sjtu{
+	grid-row: 3/span 1; 
+}
+.sjtu_pic{
+	grid-row: 4/span 1; 
+}
+.jcd{
+	grid-row: 5/span 1; 
+}
+.jcd_pic{
+	grid-row: 6/span 1; 
+}
+label {
+	display: inline-block;
+	text-align: left;
+	margin-left: 10px;
+  }
+.buttonHolder,.inputHolder{ 
+	text-align: center; 
+}
+.buttonHolder{
+	margin-top: 10px;
+}​
+#logo{
+    animation-name: animation_logo; 
+    animation-duration: 5s;
+}
+@keyframes animation_logo {
+    from { 
+        width: 50px;
+        opacity: 0;
+    }
+    to {
+       width: 425px; 
+       opacity: 1; 
+    }
+}
+
+
+@media screen and (min-width: 750px){
+	.nav_links{
+		flex-direction: row;
+	}
+	header{
+        justify-content: space-between;
+    }
+	.container {
+		grid-template-columns: 1fr 1fr;
+		/* grid-template-rows: auto auto auto; */
+		grid-auto-rows: minmax(min-content, max-content);
+	  }
+	  .sjtu_pic,.jcd,.umsi{
+		grid-column: 2/span 1; 
+	  }
+	  .sjtu,.jcd_pic,.my_pic{
+		grid-column: 1/span 1; 
+	  }
+	  .umsi,.my_pic{
+		grid-row: 1/span 1; 
+	  }
+	  .sjtu_pic,.sjtu{
+		grid-row: 2/span 1; 
+	  }
+	  .jcd,.jcd_pic{
+		grid-row: 3/span 1;
+	  }
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+    #logo{
+        animation-delay: -42s;
+    }
+}
